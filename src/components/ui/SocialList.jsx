@@ -22,10 +22,10 @@ const list = [
 ]
 const SocialList = () => {
     return (
-        <ul className={`flex gap-2 -translate-x-3`}>
+        <ul className={`flex -translate-x-3 gap-2`}>
             {list.map(item => (
                 <li key={item.id}>
-                    <a className={`duration-300 hover:scale-110 block`} href={'#'}>
+                    <a className={`block duration-300 hover:scale-110`} href={'#'}>
                         <img src={item.src} alt="social icon" width={40} height={40} />
                     </a>
                 </li>
