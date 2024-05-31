@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+    html,
+    body {
+        @apply h-full;
+    }
+
+    main {
+        @apply h-full grow;
+        > * {
+            @apply min-w-0;
+        }
+    }
+}
+
+@layer components {
+    .wrapper {
+        @apply flex min-h-full flex-col;
+    }
+}
+
+@layer utilities {
+    .title {
+        @apply text-balance text-center text-5xl font-bold;
+    }
+
+    .subtitle {
+        @apply text-balance text-center text-3xl font-bold text-red-500;
+    }
+
+    .container {
+        @apply mx-auto w-full max-w-7xl sm:px-4 lg:px-6;
+    }
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .scrollbar::-webkit-scrollbar {
+        @apply w-2;
+    }
+}
