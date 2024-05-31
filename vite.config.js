@@ -13,6 +13,7 @@ export default defineConfig({
         alias: {
             // '@': path.resolve(__dirname, './src'),
             '@styles': path.resolve(__dirname, './src/styles'),
+            '@assets': path.resolve(__dirname, './src/assets'),
             '@layout': path.resolve(__dirname, './src/components/layout'),
             '@ui': path.resolve(__dirname, './src/components/ui'),
             '@pages': path.resolve(__dirname, './src/pages'),

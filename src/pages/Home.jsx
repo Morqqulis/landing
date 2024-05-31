@@ -1,3 +1,4 @@
+import image from '@assets/Home/hero.jpg'
 const Home = () => {
     return (
         <div className={`container flex h-[85vh] items-center py-10`}>
@@ -19,13 +20,7 @@ const Home = () => {
                     </p>
                 </div>
                 <div className={` `}>
-                    <img
-                        className={`h-auto w-full max-w-full`}
-                        src={'/assets/Home/hero.jpg'}
-                        alt="Hero image"
-                        width={508}
-                        height={657}
-                    />
+                    <img className={`h-auto w-full max-w-full`} src={image} alt="Hero image" width={508} height={657} />
                 </div>
             </div>
         </div>

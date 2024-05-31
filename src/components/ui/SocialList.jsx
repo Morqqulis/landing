@@ -1,22 +1,27 @@
+import facebook from '@assets/Footer/facebook.svg'
+import instagram from '@assets/Footer/insta.svg'
+import linkendin from '@assets/Footer/linkedin.svg'
+import youtube from '@assets/Footer/youtube.svg'
+
 const list = [
     {
         id: 1,
-        src: '/Footer/facebook.svg',
+        src: facebook,
         link: '#'
     },
     {
         id: 2,
-        src: '/Footer/linkedin.svg',
+        src: linkendin,
         link: '#'
     },
     {
         id: 3,
-        src: '/Footer/youtube.svg',
+        src: youtube,
         link: '#'
     },
     {
         id: 4,
-        src: '/Footer/insta.svg',
+        src: instagram,
         link: '#'
     }
 ]
