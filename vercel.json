@@ -1,0 +1,10 @@
+{
+    "routes": [
+        { "src": "/", "dest": "/" },
+        { "src": "/products", "dest": "/" },
+        { "src": "/my-weather", "dest": "/" },
+        { "src": "/products/:productId", "dest": "/" },
+        { "src": "/table", "dest": "/" },
+        { "src": "/tableList", "dest": "/" }
+    ]
+}
