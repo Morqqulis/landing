@@ -5,6 +5,6 @@
         { "src": "/my-weather", "dest": "/" },
         { "src": "/products/:productId", "dest": "/" },
         { "src": "/table", "dest": "/" },
-        { "src": "/tableList", "dest": "/" }
+        { "src": "/table-list", "dest": "/" }
     ]
 }
