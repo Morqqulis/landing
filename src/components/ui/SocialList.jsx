@@ -1,22 +1,22 @@
 const list = [
     {
         id: 1,
-        src: '/assets/Footer/facebook.svg',
+        src: '/Footer/facebook.svg',
         link: '#'
     },
     {
         id: 2,
-        src: '/assets/Footer/linkedin.svg',
+        src: '/Footer/linkedin.svg',
         link: '#'
     },
     {
         id: 3,
-        src: '/assets/Footer/youtube.svg',
+        src: '/Footer/youtube.svg',
         link: '#'
     },
     {
         id: 4,
-        src: '/assets/Footer/insta.svg',
+        src: '/Footer/insta.svg',
         link: '#'
     }
 ]
