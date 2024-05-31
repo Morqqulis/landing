@@ -1,7 +1,6 @@
-import { useEffect } from 'react'
-import { getProducts } from '../utils'
-import { useState } from 'react'
-import ProductCard from '../components/ui/ProductCard'
+import ProductCard from '@ui/ProductCard'
+import { getProducts } from '@utils'
+import { useEffect, useState } from 'react'
 
 const Products = () => {
     const [products, setProducts] = useState([])
@@ -24,9 +23,11 @@ const Products = () => {
 
                 {products.length > 0 && (
                     <div className={`grid grid-cols-4 gap-4`}>
-                        {products.map(product => (
-                            <ProductCard key={product.id} {...product} />
-                        ))}
+                        {products
+                            .sort((a, b) => a.price - b.price)
+                            .map(product => (
+                                <ProductCard key={product.id} {...product} />
+                            ))}
                     </div>
                 )}
             </div>

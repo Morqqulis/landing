@@ -1,11 +1,19 @@
 import { useEffect, useState } from 'react'
-import { getUsers } from '../utils'
+import { getTodos } from '../utils'
 
 const Table = () => {
-    const [users, setUsers] = useState([])
+    const [todos, setTodos] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        getUsers().then(users => setUsers(users.users))
+        setLoading(true)
+        getTodos().then(todos => {
+            setTodos(todos.todos)
+            console.log(todos)
+            setLoading(false)
+        })
+
+        return () => setTodos([])
     }, [])
 
     return (
@@ -13,26 +21,32 @@ const Table = () => {
             <div className="container ">
                 <h1 className={`title mb-10`}>Table</h1>
 
-                <table className={`table w-full`}>
-                    <thead>
-                        <tr>
-                            <th className={`border border-green-800`}>First Name</th>
-                            <th className={`border border-green-800`}>Last Name</th>
-                            <th className={`border border-green-800`}>Email</th>
-                            <th className={`border border-green-800`}>Phone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {users.map(user => (
-                            <tr className={`text-center`} key={user.id}>
-                                <td className={`border border-cyan-500`}>{user.firstName}</td>
-                                <td className={`border border-cyan-500`}>{user.lastName}</td>
-                                <td className={`border border-cyan-500`}>{user.email}</td>
-                                <td className={`border border-cyan-500`}>{user.phone}</td>
+                {loading && <h2 className={`subtitle`}>Loading...</h2>}
+
+                {!loading && (
+                    <table className={`table w-full`}>
+                        <thead>
+                            <tr>
+                                <th className={`border border-green-800`}>Todo Id</th>
+                                <th className={`border border-green-800`}>Todo</th>
+                                <th className={`border border-green-800`}>Completed</th>
+                                <th className={`border border-green-800`}>User ID</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {todos
+                                .sort((a, b) => a.id - b.id)
+                                .map(todo => (
+                                    <tr className={`text-center`} key={todo.id}>
+                                        <td className={`border border-cyan-500`}>{todo.id}</td>
+                                        <td className={`border border-cyan-500`}>{todo.todo}</td>
+                                        <td className={`border border-cyan-500`}>{todo.completed ? 'Yes' : 'No'}</td>
+                                        <td className={`border border-cyan-500`}>{todo.userId}</td>
+                                    </tr>
+                                ))}
+                        </tbody>
+                    </table>
+                )}
             </div>
         </section>
     )

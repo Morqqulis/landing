@@ -24,7 +24,7 @@ export const getWeather = async (city = 'Baku') => {
 
 export const getUsers = async () => {
     try {
-        const { data } = await axios.get('http://dummyjson.com/users?sortBy=firstName&order=asc')
+        const { data } = await axios.get('http://dummyjson.com/users')
         return data
     } catch (error) {
         console.log('Error fetching users:', error)
@@ -37,5 +37,14 @@ export const getRecipes = async () => {
         return data
     } catch (error) {
         console.log('Error fetching posts:', error)
+    }
+}
+
+export const getTodos = async () => {
+    try {
+        const { data } = await axios.get('https://dummyjson.com/todos')
+        return data
+    } catch (error) {
+        console.log('Error fetching todos:', error)
     }
 }
