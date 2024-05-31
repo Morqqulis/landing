@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getUsers } from '../utils'
 
 const Table = () => {
@@ -7,8 +6,6 @@ const Table = () => {
 
     useEffect(() => {
         getUsers().then(users => setUsers(users.users))
-
-        return () => setUsers([])
     }, [])
 
     return (
